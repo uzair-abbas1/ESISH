@@ -12,12 +12,12 @@ KEY_MAP = {
 
 output = []
 
+
 def on_press(key):
     try:
         if key == keyboard.Key.enter:
-            print("\nExiting...")
-            listener.stop()  # Proper way to stop without returning False
-            return
+            print("\nFinal output:", ''.join(output))
+            return False  # This stops the listener
 
         char = key.char
         if char in KEY_MAP:
@@ -31,5 +31,7 @@ def on_press(key):
         # Ignore other special keys
         pass
 
-with keyboard.Listener(on_press=on_press) as listener:
+
+print("Type your text (press Enter to finish):")
+with keyboard.Listener(on_press=on_press, suppress=True) as listener:
     listener.join()
