@@ -1,15 +1,42 @@
-import matplotlib.pyplot as plt
-from matplotlib import font_manager
+import pygame
 
-font_path = "fonts/EISHStest2.ttf"
-font_prop = font_manager.FontProperties(fname=font_path)
+pygame.init()
 
-plt.figure(figsize=(4,2))
+screen = pygame.display.set_mode((800, 200))
+pygame.display.set_caption("Custom Script Renderer")
 
-# Stack glyphs manually
-plt.text(0.1, 0.5, "\uE101", fontproperties=font_prop, fontsize=64)
-plt.text(0.1, 0.5, "\uE102", fontproperties=font_prop, fontsize=64)
-plt.text(0.2, 0.5, "\uE100", fontproperties=font_prop, fontsize=64)  # smaller top mark
+FONT_PATH = "fonts/ESISHTest2.ttf"
+font = pygame.font.Font(FONT_PATH, 48)
 
-plt.axis('off')
-plt.show()
+# Example output from your engine (PUA characters)
+text = "\uE100\uE101\uE102"
+
+clock = pygame.time.Clock()
+running = True
+
+while running:
+    screen.fill((30, 30, 30))
+
+    x = 50
+    y = 80
+
+    for i, ch in enumerate(text):
+        glyph = font.render(ch, True, (240, 240, 240))
+
+        if i == 2:  # character 3
+            # overlap with character 2
+            x -= 30  # adjust overlap amount
+        screen.blit(glyph, (x, y))
+
+        # normal advance for next character
+        x += glyph.get_width()
+
+    pygame.display.flip()
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    clock.tick(60)
+
+pygame.quit()
