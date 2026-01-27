@@ -1,10 +1,13 @@
 # Esish
+Esish converts standard English Latin fonts into a custom ESISH font with Private Use Area (PUA) glyphs, enabling specialized script rendering.
 
-## Use
-# Project Esish converts text between English and Esish
+## Description
+The 'fonts' folder contains TrueType ('.ttf') files with customized Unicode codepoints in the Private Use Area (U+E100–U+F8FF)
 
 ## Installation
-pip install -r requirements.txt
+1. Clone the repository:
+git clone https://github.com/uzair-abbas1/ESISH.git
+cd esish
+2. pip install -r requirements.txt
 
 ## Usage
-run 'python custom_keyboard.py' in terminal
