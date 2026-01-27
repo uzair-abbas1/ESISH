@@ -6,7 +6,7 @@ screen = pygame.display.set_mode((800, 400))
 pygame.display.set_caption("ESISH PUA")
 font_size = 32
 
-ESISH_font = pygame.font.Font("fonts/ESISHTest2.ttf", font_size)
+ESISH_font = pygame.font.Font("fonts/ESISH_PUA.ttf", font_size)
 normal_font = pygame.font.Font(None, font_size)
 
 custom_text = "\uE100\uE101\uE102"
@@ -53,9 +53,53 @@ while running:
             x += glyph.get_width()
         else:
             # last two characters: overlap immediately
-            x += glyph.get_width() * 0.2   # adjust overlap amount here
+            x += glyph.get_width() * 0   # adjust overlap amount here
 
     pygame.display.flip()
     clock.tick(60)
 
 pygame.quit()
+
+
+# import pygame
+#
+# pygame.init()
+#
+# screen = pygame.display.set_mode((800, 200))
+# pygame.display.set_caption("Custom Script Renderer")
+#
+# FONT_PATH = "fonts/Untitled1.ttf"
+# font = pygame.font.Font(FONT_PATH, 48)
+#
+# # Example output from your engine (PUA characters)
+# text = "\uE100\uE103\uE104\uE105\uE106"
+#
+# clock = pygame.time.Clock()
+# running = True
+#
+# while running:
+#     screen.fill((30, 30, 30))
+#
+#     x = 50
+#     y = 80
+#
+#     for i, ch in enumerate(text):
+#         glyph = font.render(ch, True, (240, 240, 240))
+#
+#         if i == 2 or i == 4:  # character 3
+#             # overlap with character 2
+#             x -= glyph.get_width()  # adjust overlap amount
+#         screen.blit(glyph, (x, y))
+#
+#         # normal advance for next character
+#         x += glyph.get_width()
+#
+#     pygame.display.flip()
+#
+#     for event in pygame.event.get():
+#         if event.type == pygame.QUIT:
+#             running = False
+#
+#     clock.tick(60)
+#
+# pygame.quit()

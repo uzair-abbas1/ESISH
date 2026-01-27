@@ -2,14 +2,15 @@ import pygame
 
 pygame.init()
 
-screen = pygame.display.set_mode((800, 200))
+screen = pygame.display.set_mode((1000, 500))
 pygame.display.set_caption("Custom Script Renderer")
 
-FONT_PATH = "fonts/ESISHTest2.ttf"
+FONT_PATH = "fonts/ESISH_PUA.ttf"
 font = pygame.font.Font(FONT_PATH, 48)
 
 # Example output from your engine (PUA characters)
-text = "\uE100\uE101\uE102"
+text1= ''.join(chr(c) for c in range(0xE100, 0xE118))
+text2= ''.join(chr(c) for c in range(0xE118, 0xE134))
 
 clock = pygame.time.Clock()
 running = True
@@ -20,12 +21,19 @@ while running:
     x = 50
     y = 80
 
-    for i, ch in enumerate(text):
+    for i, ch in enumerate(text1):
         glyph = font.render(ch, True, (240, 240, 240))
 
-        if i == 2:  # character 3
-            # overlap with character 2
-            x -= 30  # adjust overlap amount
+        screen.blit(glyph, (x, y))
+
+        # normal advance for next character
+        x += glyph.get_width()
+
+    y += 80
+    x = 50
+    for i, ch in enumerate(text2):
+        glyph = font.render(ch, True, (240, 240, 240))
+
         screen.blit(glyph, (x, y))
 
         # normal advance for next character
