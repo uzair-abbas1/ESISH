@@ -1,0 +1,31 @@
+from fontEngine import charTypes
+
+a_char = charTypes.QuadChar('\ue100')
+b_char = charTypes.DoubleHorizontalChar('\ue101', '\ue102')
+c_char = charTypes.SingleChar('\ue103', '\ue104')
+d_char = charTypes.SingleChar('\ue105', '\ue106')
+e_char = charTypes.TripleChar('\ue107', '\ue108', '\ue109')
+f_char = charTypes.DoubleHorizontalChar('\ue10a', '\ue10b')
+g_char = charTypes.DoubleHorizontalChar('\ue10c', '\ue10d')
+h_char = charTypes.SingleChar('\ue10e', '\ue10f')
+i_char = charTypes.SingleChar('\ue110', '\ue111')
+j_char = charTypes.DoubleHorizontalChar('\ue112', '\ue113')
+k_char = charTypes.SingleChar('\ue114', '\ue115')
+l_char = charTypes.DoubleHorizontalAndDiagonalChar('\ue116', '\ue117', '\ue118')
+m_char = charTypes.SingleChar('\ue118', '\ue11a')
+n_char = charTypes.SingleChar('\ue11b', '\ue11c')
+o_char = charTypes.SingleChar('\ue11d', '\ue11e')
+p_char = charTypes.SingleChar('\ue11f', '\ue120')
+q_char = charTypes.SingleChar('\ue121', '\ue122')
+r_char = charTypes.SingleChar('\ue123', '\ue124')
+s_char = charTypes.DoubleHorizontalChar('\ue125', '\ue126')
+t_char = charTypes.DoubleHorizontalAndDiagonalChar('\ue127', '\ue128', '\ue129')
+u_char = charTypes.DoubleVerticalChar('\ue12a')
+v_char = charTypes.SingleChar('\ue12b', '\ue12c')
+w_char = charTypes.SingleChar('\ue12d', '\ue12e')
+x_char = charTypes.SingleChar('\ue12f', '\ue130')
+y_char = charTypes.DoubleHorizontalChar('\ue131', '\ue132')
+z_char = charTypes.DoubleVerticalChar('\ue133')
+
+characters_as_codes: list[charTypes.Character] = [a_char, b_char, c_char, d_char, e_char, f_char, g_char, h_char, i_char, j_char, k_char, l_char, m_char, n_char, o_char, p_char, q_char, r_char, s_char, t_char, u_char, v_char, w_char, x_char, y_char, z_char]
+
