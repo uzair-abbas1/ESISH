@@ -12,7 +12,7 @@ i_char = charTypes.SingleChar('\ue110', '\ue111')
 j_char = charTypes.DoubleHorizontalChar('\ue112', '\ue113')
 k_char = charTypes.SingleChar('\ue114', '\ue115')
 l_char = charTypes.DoubleHorizontalAndDiagonalChar('\ue116', '\ue117', '\ue118')
-m_char = charTypes.SingleChar('\ue118', '\ue11a')
+m_char = charTypes.SingleChar('\ue119', '\ue11a')
 n_char = charTypes.SingleChar('\ue11b', '\ue11c')
 o_char = charTypes.SingleChar('\ue11d', '\ue11e')
 p_char = charTypes.SingleChar('\ue11f', '\ue120')
@@ -26,6 +26,7 @@ w_char = charTypes.SingleChar('\ue12d', '\ue12e')
 x_char = charTypes.SingleChar('\ue12f', '\ue130')
 y_char = charTypes.DoubleHorizontalChar('\ue131', '\ue132')
 z_char = charTypes.DoubleVerticalChar('\ue133')
+space_char = charTypes.DoubleVerticalChar('\ue134')
 
-characters_as_codes: list[charTypes.Character] = [a_char, b_char, c_char, d_char, e_char, f_char, g_char, h_char, i_char, j_char, k_char, l_char, m_char, n_char, o_char, p_char, q_char, r_char, s_char, t_char, u_char, v_char, w_char, x_char, y_char, z_char]
+characters_as_codes: list[charTypes.Character] = [a_char, b_char, c_char, d_char, e_char, f_char, g_char, h_char, i_char, j_char, k_char, l_char, m_char, n_char, o_char, p_char, q_char, r_char, s_char, t_char, u_char, v_char, w_char, x_char, y_char, z_char, space_char]
 
