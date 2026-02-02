@@ -5,8 +5,11 @@ pygame.init()
 screen = pygame.display.set_mode((1000, 500))
 pygame.display.set_caption("Custom Script Renderer")
 
+font_size = 48
+
 FONT_PATH = "fonts/ESISH_PUA.ttf"
-font = pygame.font.Font(FONT_PATH, 48)
+font = pygame.font.Font(FONT_PATH, font_size)
+normal_font = pygame.font.Font(None, font_size)
 
 # Example output from your engine (PUA characters)
 text1= ''.join(chr(c) for c in range(0xE100, 0xE118))
