@@ -1,9 +1,9 @@
 # Characters, single, doubleHorizontal, doubleVertical, doubleHorizontalAndDiagonal, triple, quad
 
 class Character:
-    def __init__(self, length, width, diag, gap, glyph_codes, ESISHChar):
+    def __init__(self, length, height, diag, gap, glyph_codes, ESISHChar):
         self.length = length
-        self.width = width
+        self.height = height
         self.diag = diag
         self.gap = gap
         self.glyph_codes = glyph_codes
