@@ -14,7 +14,7 @@ normal_font = pygame.font.Font(None, FONT_SIZE)
 WE = EsishFontEngine()
 renderer = TextRenderer(screen, ESISH_font, normal_font, WE)
 
-text = "What is your name"
+text = "On my first day learning a new language, I sat quietly in a small cafe, listening to the sounds of unfamiliar words around me, and even though I felt nervous and unsure, I decided to start practicing by imagining a simple conversation, where I politely greet a stranger, explain that I am still learning, and slowly ask for their name, hoping that each small sentence will help me feel more confident and comfortable with the language."
 
 clock = pygame.time.Clock()
 running = True
