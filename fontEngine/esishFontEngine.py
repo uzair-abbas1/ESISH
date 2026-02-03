@@ -37,13 +37,15 @@ class EsishFontEngine:
         return self.squares[1] and self.squares[3]
 
     def find_coordinate_and_num_of_first_empty_square(self):
-        if self.squares[0]:
+        if self.squares[0] and self.squares[1] and self.squares[2] and self.squares[3]:
             return [0, 1, 0]
-        if self.squares[1]:
+        if self.squares[1] and self.squares[2] and self.squares[3]:
             return [1, 1, 1]
-        if self.squares[2]:
+        if self.squares[2] and self.squares[3]:
             return [0, 0, 2]
-        return [1, 0, 3]
+        if self.squares[3]:
+            return [1, 0, 3]
+        return [None, None, 5]
 
     def reset_squares(self):
         self.squares = [True, True, True, True]
@@ -69,14 +71,21 @@ class EsishFontEngine:
                     # single char
 
                     [x, y, pos] = self.find_coordinate_and_num_of_first_empty_square()
-                    char = character_class.glyph_codes[0 if y == 0 else 1]
-                    initial_x_change = x
-                    final_x_change = 1 if x == 1 and y == 0 else -x
+                    if pos != 5:
+                        char = character_class.glyph_codes[0 if y == 0 else 1]
+                        initial_x_change = x
+                        final_x_change = 1 if x == 1 and y == 0 else -x
 
-                    # mark correct squares - order matters of reset
-                    self.set_squares_to_false_based_num([pos])
-                    if x == 1 and y == 0:
+                        # mark correct squares - order matters of reset
+                        self.set_squares_to_false_based_num([pos])
+                        if x == 1 and y == 0:
+                            self.reset_squares()
+                    else:
+                        # no available single square
+                        char = character_class.glyph_codes[1]
+                        initial_x_change = 2
                         self.reset_squares()
+                        self.set_squares_to_false_based_num([0])
 
                 else:
                     # vertical char
