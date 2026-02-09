@@ -37,9 +37,9 @@ class EsishFontEngine:
         return self.squares[1] and self.squares[3]
 
     def find_coordinate_and_num_of_first_empty_square(self):
-        if self.squares[0] and self.squares[1] and self.squares[2] and self.squares[3]:
+        if self.squares[0] and self.squares[1] and self.squares[3]:
             return [0, 1, 0]
-        if self.squares[1] and self.squares[2] and self.squares[3]:
+        if self.squares[1] and self.squares[3]:
             return [1, 1, 1]
         if self.squares[2] and self.squares[3]:
             return [0, 0, 2]
