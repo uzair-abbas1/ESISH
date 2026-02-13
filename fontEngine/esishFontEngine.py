@@ -1,8 +1,5 @@
-from typing import final
-
 from fontEngine import characters
 from fontEngine.charTypes import Character
-from fontEngine.characters import x_char
 
 # coordinate: top left, start from 0
 # number: start from 0, count to 3
@@ -55,10 +52,10 @@ class EsishFontEngine:
             if 0 <= item <= 3:
                 self.squares[item] = False
 
-    def convert_characters_to_list(self, word):
+    def convert_characters_to_list(self, sentence):
         letters = []
 
-        for letter in word:
+        for letter in sentence:
             character_class = self.find_esish_character_class(letter)
             char = None
             initial_x_change = 0

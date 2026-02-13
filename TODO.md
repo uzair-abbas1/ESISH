@@ -5,3 +5,4 @@ Requirments
 
 ERRORS:
 character: E (on empty full square), l (diag)
+Orientation of characters
